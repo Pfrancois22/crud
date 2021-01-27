@@ -15,14 +15,14 @@ if(isset($_POST)){
 
             $query = $db->prepare($sql);
 
-            $query->bindValue(':produit', $produit, ':prix', PDO::PARAM_STR);
+            $query->bindValue(':produit', $produit, PDO::PARAM_STR);
             $query->bindValue(':prix', $prix, PDO::PARAM_STR);
             $query->bindValue(':nombre', $nombre, PDO::PARAM_INT);
 
             $query->execute();
 
             $_SESSION['message'] = "Le produit à bien été rajouté";
-            // header('Location: index.php');
+            header('Location: index.php');
 
     }
     // else{
